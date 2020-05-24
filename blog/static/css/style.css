@@ -1,0 +1,314 @@
+@charset "UTF-8";
+
+/* リセット ______________________________________ */
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, code,
+img, small, strong, i,
+dl, dt, dd, ol, ul, li,
+form, label, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure,
+footer, header, menu, nav, section, summary {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1.9;
+}
+
+header, footer {
+    width: 100%;
+}
+
+details,figure,footer,header,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    color: #333;
+    text-decoration: none;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* タグ定義 ______________________________________ */
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 17px;
+}
+
+
+/* 共通パーツ ____________________________________ */
+.wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.home {
+    color: #333;
+    background-color: #f2f2f2;
+    font-family: 'Noto Sans', 'Open Sans', 'Roboto', sans-serif;
+}
+
+
+/* レイアウト ____________________________________ */
+.home .layout {
+    display: grid;
+    gap: 35px;
+    grid-template:
+            "header header header header  header" 69px
+            "...    navbar navbar navbar  ...   " 44px
+            "...    post   post   sidebar ...   " 1fr
+            "footer footer footer footer  footer" 80px
+            /1fr    324px  324px    290px   1fr;
+}
+
+#header {
+    grid-area: header;
+}
+
+#navbar {
+    grid-area: navbar;
+}
+
+#sidebar {
+    grid-area: sidebar;
+}
+
+#post {
+    grid-area: post;
+}
+
+#footer {
+    grid-area: footer;
+    background-color: #F89174;
+}
+
+
+/* ヘッダー ______________________________________ */
+#header {
+    background-color: #fff;
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    margin: 8px 0;
+}
+
+
+/* ナビゲーションバー ____________________________ */
+.nav,
+.nav-items {
+    display: inline-block;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.nav li:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.nav li:last-child {
+    border-radius: 0 5px 5px 0;
+    margin-right: 0;
+}
+
+.nav-items {
+    width: 20%;
+    margin-right: 2px;
+    border-bottom: 2px solid #F89174;
+    background-color: #fff;
+}
+
+.nav-items:first-child,
+.nav-items:last-child {
+    overflow: hidden;
+}
+
+.nav-items a {
+    display: block;
+    width: 100%;
+    padding: 7px 0;
+}
+
+.nav-items:hover {
+    height: calc(100% - 1px);
+    font-weight: 700;
+    border-bottom-width: 3px;
+}
+
+
+/* サイドバー ____________________________________ */
+.widget {
+    margin-bottom: 35px;
+}
+
+.widget-title,
+.widget-body {
+    padding: 7px 15px;
+}
+
+.widget-title {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+    background-color: #F89174;
+}
+
+.widget-body {
+    border-radius: 0 0 5px 5px;
+    background-color: #fff;
+}
+
+.widget-body ul {
+    list-style: none;
+}
+
+.widget-body a:hover {
+  color: #4CAF50;
+}
+
+
+/* カテゴリー __*/
+.categories a {
+    display: block;
+    padding-bottom: 5px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+
+/* タグ ________*/
+.tags li {
+    display: inline-block;
+}
+
+.tags a {
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 3px 5px;
+    margin: 0 5px 5px 0;
+    font-size: 12px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+
+/* 検索フォーム */
+#serch-form input {
+    width: 85%;
+    font-size: 16px;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+#serch-form button {
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ポスト ________________________________________ */
+#post .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.post-items {
+    display: block;
+    width: 49%;
+    min-height: 270px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+}
+
+.post-items:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.1875em);
+}
+
+.thumbnail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.post-title {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.post-published-date {
+    font-size: 15px;
+    color: #bfbfbf;
+    text-align: right;
+}
+
+
+
+/* フッター ______________________________________ */
+#footer {
+    text-align: center;
+    color: #fff;
+}
+
+#footer .wrap {
+    padding: 12px 0;
+}
+
+#footer .wrap a {
+    color: #fff;
+}
+
+.copy {
+    font-size: 14px;
+}
