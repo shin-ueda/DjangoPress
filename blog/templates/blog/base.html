@@ -37,22 +37,20 @@
         <h3 class="widget-title">Categories</h3>
         <div class="widget-body">
             <ul class="categories">
-                <li><a href="#">Category 1</a></li>
-                <li><a href="#">Category 2</a></li>
-                <li><a href="#">Category 3</a></li>
+                {% for category in categories %}
+                    <li><a href="#">{{ category.title }}</a></li>
+                {% endfor %}
             </ul>
         </div>
     </div>
+
     <div class="widget">
         <h3 class="widget-title">Tags</h3>
         <div class="widget-body">
             <ul class="tags">
-                <li><a href="#">Tag 1</a></li>
-                <li><a href="#">Tag 2</a></li>
-                <li><a href="#">Tag 3</a></li>
-                <li><a href="#">Tag 4</a></li>
-                <li><a href="#">Tag 5</a></li>
-                <li><a href="#">Tag 6</a></li>
+                {% for tag in tags %}
+                    <li><a href="#">{{ tag.title }}</a></li>
+                {% endfor %}
             </ul>
         </div>
     </div>
